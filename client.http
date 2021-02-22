@@ -1,0 +1,34 @@
+@hostName = 127.0.0.1
+@port = 8000
+@host = {{hostName}}:{{port}}
+@id = 2
+
+###
+POST http://{{host}}/api/auth/signup HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Cristian Charris",
+    "email": "cristian@gmail.com",
+    "password": "1234567890"
+}
+
+###
+GET http://{{host}}/api/users HTTP/1.1
+
+###
+GET http://{{host}}/api/users/{{id}} HTTP/1.1
+
+###
+PUT http://{{host}}/api/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "id": 1,
+    "name": "Cristian Charris Perez",
+    "email": "cristianel@gmail.com",
+    "password": "1234567890"
+}
+
+###
+DELETE http://{{host}}/api/users/{{id}} HTTP/1.1
