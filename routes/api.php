@@ -33,4 +33,5 @@ Route::group([
     }
 );
 
+
 Route::resource('users', 'UserController');
